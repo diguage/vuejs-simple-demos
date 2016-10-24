@@ -8,6 +8,9 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  // resolveLoader: {
+  //   root: path.resolve(__dirname, './node_modules'),
+  // },
   module: {
     rules: [
       {
@@ -21,6 +24,14 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        loader: "style!css"
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,
+        loader: "file"
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
