@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="utf-8">
     <title>vuejs-simple-demos</title>
   </head>
   <body>
-    <div id="app"></div>
+    <!-- // 1. 默认 -->
+    <!-- <div id="app"></div> -->
+    <h1>第一个示例</h1>
+    <div id="app">
+      {{ message }}
+    </div>
+
+    <h1>第二个示例</h1>
+    <div id="app-2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few second to see my dynamically bound title!
+      </span>
+    </div>
+
+    <h1>第三个示例</h1>
+    <div id="app-3">
+      <p v-if="seen">Now you see me</p>
+    </div>
+
+    <h1>第四个示例</h1>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <h1>第五个示例</h1>
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <h1>第六个示例</h1>
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <!-- <p v-html="rawHtml">{{ message }}</p> -->
+      <!-- v-html="rawHtml" 这个改怎么用呢？ -->
+      <!-- <p v-once>{{ message }}</p> -->
+      <input type="text" v-model="message">
+    </div>
+
+    <h1>第七个示例</h1>
+    <div id="app-7">
+      <ol>
+        <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
+      </ol>
+    </div>
+
     <script src="/dist/build.js"></script>
   </body>
 </html>
